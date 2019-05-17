@@ -1,10 +1,11 @@
 <?php
 include_once '../../config/database.php';
 
-if(!$user->is_loggedin())
+    if(!$user->is_loggedin())
     {
-        $user->redirect('.././home.php');
-    }
+        $user->redirect('./login.php');
+    }  
+
     $user_id = $_SESSION['user_session'];
     $stmt = $conn->prepare("SELECT * FROM users WHERE ID=:user_id");
     $stmt->execute(array(":user_id"=>$user_id));

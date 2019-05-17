@@ -7,6 +7,21 @@ class USER
     {
       $this->db = $DB_con;
     }
+
+    public function saveProduct($pName,$pType,$pCondition,$pPrice,$pDescription,$pImg) {
+        try
+       {
+          $sql = "INSERT INTO products (ProductName, ProductType, ProductCondition, ProductPrice, ProductDescription, ProductImgURL) VALUES ('$pName','$pType','$pCondition',$pPrice,'$pDescription','$pImg')"; // building a string with the SQL INSERT you want to run
+            
+          // use exec() because no results are returned
+          $this->db->exec($sql);
+          echo "New table record created successfully"; // If successful we will see this
+       }
+       catch(PDOException $e)
+       {
+           echo $e->getMessage();
+       }
+    }
  
     public function login($uname,$upass)
     {
