@@ -6,19 +6,18 @@ if($user->is_loggedin()!="")
  $user->redirect('home.php');
 }
 
-if(isset($_POST['btn-login']))
+if($_SERVER['REQUEST_METHOD'] == 'POST')
 {
- $uname = $_POST['txt_uname_email'];
- $umail = $_POST['txt_uname_email'];
- $upass = $_POST['txt_password'];
+ $uname = $_POST['i_uname'];
+ $upass = $_POST['i_password'];
   
- if($user->login($uname,$umail,$upass))
+ if($user->login($uname,$upass))
  {
-  $user->redirect('home.php');
+  $user->redirect('./home.php');
  }
  else
  {
-  $error = "Wrong Details !";
+  $error = "Wrong Details!";
  } 
 }
 ?>
@@ -33,31 +32,28 @@ if(isset($_POST['btn-login']))
 <div class="container">
      <div class="form-container">
         <form method="post">
-            <h2>Sign in.</h2><hr />
+            <h2>Sign in</h2><hr />
             <?php
             if(isset($error))
             {
                   ?>
-                  <div class="alert alert-danger">
-                      <i class="glyphicon glyphicon-warning-sign"></i> &nbsp; <?php echo $error; ?> !
-                  </div>
+                  
+                    <p>Error: <?php echo $error; ?></p>
                   <?php
             }
             ?>
             <div class="form-group">
-             <input type="text" class="form-control" name="txt_uname_email" placeholder="Username or E mail ID" required />
+             <input type="text" class="form-control" name="i_uname" placeholder="username" required />
             </div>
             <div class="form-group">
-             <input type="password" class="form-control" name="txt_password" placeholder="Your Password" required />
+             <input type="password" class="form-control" name="i_password" placeholder="password" required />
             </div>
             <div class="clearfix"></div><hr />
             <div class="form-group">
-             <button type="submit" name="btn-login" class="btn btn-block btn-primary">
+             <button type="submit" class="btn btn-block btn-primary">
                  <i class="glyphicon glyphicon-log-in"></i>&nbsp;SIGN IN
                 </button>
             </div>
-            <br />
-            <label>Don't have account yet ! <a href="sign-up.php">Sign Up</a></label>
         </form>
        </div>
 </div>

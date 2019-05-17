@@ -3,10 +3,10 @@ include_once '../../config/database.php';
 
 if(!$user->is_loggedin())
     {
-    $user->redirect('.././home.php');
+        $user->redirect('.././home.php');
     }
     $user_id = $_SESSION['user_session'];
-    $stmt = $DB_con->prepare("SELECT * FROM users WHERE user_id=:user_id");
+    $stmt = $conn->prepare("SELECT * FROM users WHERE ID=:user_id");
     $stmt->execute(array(":user_id"=>$user_id));
     $userRow=$stmt->fetch(PDO::FETCH_ASSOC);
 ?>
@@ -15,7 +15,7 @@ if(!$user->is_loggedin())
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="style.css" type="text/css"  />
-<title>welcome - <?php print($userRow['user_email']); ?></title>
+<title>welcome - <?php print($userRow['Username']); ?></title>
 </head>
 
 <body>
@@ -26,7 +26,7 @@ if(!$user->is_loggedin())
     </div>
 </div>
 <div class="content">
-welcome : <?php print($userRow['user_name']); ?>
+welcome : <?php print($userRow['Username']); ?>
 </div>
 </body>
 </html>

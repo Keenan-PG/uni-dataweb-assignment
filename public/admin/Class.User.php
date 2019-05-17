@@ -13,11 +13,11 @@ class USER
        try
        {
           $stmt = $this->db->prepare("SELECT * FROM users WHERE Username=:uname LIMIT 1");
-          $stmt->execute(array(':uname'=>$uname, ':umail'=>$umail));
+          $stmt->execute(array(':uname'=>$uname));
           $userRow=$stmt->fetch(PDO::FETCH_ASSOC);
           if($stmt->rowCount() > 0)
           {
-             if(password_verify($upass, $userRow['Password']))
+             if(($upass == $userRow['Password']))
              {
                 $_SESSION['user_session'] = $userRow['ID'];
                 return true;
