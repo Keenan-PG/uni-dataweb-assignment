@@ -1,2 +1,2 @@
 # uni-dataweb-assignment
-university final 1st year assignment
+University final 1st year assignment. Pretty much just raw PHP. 
