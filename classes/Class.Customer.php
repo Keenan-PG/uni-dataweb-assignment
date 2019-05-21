@@ -1,13 +1,16 @@
 <?php
 class CUSTOMER
 {
+   // private db var - security
     private $db;
  
+    // setting this->db to the db connection passed by database.php
     function __construct($DB_con)
     {
       $this->db = $DB_con;
     }
 
+    // method to call on front end 
     public function showProducts() {
         try
        {
@@ -26,5 +29,6 @@ class CUSTOMER
            echo $e->getMessage();
        }
     }
+    
 }
 ?>
