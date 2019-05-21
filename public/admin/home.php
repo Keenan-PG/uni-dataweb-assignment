@@ -1,9 +1,9 @@
 <?php
 include_once '../../config/database.php';
 
-    if(!$user->isLoggedIn())
+    if(!$admin->isLoggedIn())
     {
-        $user->redirect('./login.php');
+        $admin->redirect('./login.php');
     }  
 
     // making userID variable with session
@@ -11,7 +11,7 @@ include_once '../../config/database.php';
 
     // query DB function (in user class), passing in above userID, saving returned $userRow (result)
     // as $userRow to use in this file.
-    $userRow = $user->getUserID($userID);
+    $userRow = $admin->getUserID($userID);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -29,7 +29,7 @@ include_once '../../config/database.php';
         </div>
     </div>
     <div class="content">
-        Welcome <?php print($userRow['Username']); ?> :)
+        Welcome <?php print($userRow['adminname']); ?> :)
     </div>
 </body>
 </html>

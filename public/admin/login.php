@@ -1,16 +1,16 @@
 <?php
   require_once '../../config/database.php';
 
-  if($user->isLoggedIn()) {
-    $user->redirect('home.php');
+  if($admin->isLoggedIn()) {
+    $admin->redirect('home.php');
   }
 
   if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $uname = $_POST['username'];
     $upass = $_POST['password'];
     
-    if($user->login($uname,$upass)) {
-      $user->redirect('./home.php');
+    if($admin->login($uname,$upass)) {
+      $admin->redirect('./home.php');
     } else {
       $error = "Wrong Details!";
     }
@@ -41,7 +41,7 @@
              <input type="text" class="form-control" name="username" placeholder="username" value="gnidloGnaneeK" required />
             </div>
             <div class="form-group">
-            <label for="username">Enter password:</label>
+            <label for="adminname">Enter password:</label>
              <input type="password" class="form-control" name="password" placeholder="password" value="12ad34mi56n" required />
             </div>
             <small><i>*pre-populated for easy login (would not do this real world)</i></small>

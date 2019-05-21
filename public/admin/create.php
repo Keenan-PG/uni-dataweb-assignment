@@ -1,8 +1,8 @@
 <?php
     require_once '../../config/database.php';
 
-    if(!$user->is_loggedin()) {
-        $user->redirect('home.php');
+    if(!$admin->is_loggedin()) {
+        $admin->redirect('home.php');
     }
 
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -13,7 +13,7 @@
         $pDescription = $_POST['i_pDescription'];
         $pImg = $_POST['i_pImgURL'];
         
-        $user->saveProduct($pName,$pType,$pCondition,$pPrice,$pDescription,$pImg);
+        $admin->saveProduct($pName,$pType,$pCondition,$pPrice,$pDescription,$pImg);
     }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
