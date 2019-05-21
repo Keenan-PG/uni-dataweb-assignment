@@ -45,7 +45,7 @@ class USER
       $stmt = $this->db->prepare("SELECT * FROM users WHERE ID=:user_id");
       $stmt->execute(array(":user_id"=>$UID));
       $userRow=$stmt->fetch(PDO::FETCH_ASSOC);
-      
+
       return $userRow;
    }
 
@@ -83,7 +83,8 @@ class USER
     public function saveProduct($pName,$pType,$pCondition,$pPrice,$pDescription,$pImg) {
       try
      {
-        $sql = "INSERT INTO products (ProductName, ProductType, ProductCondition, ProductPrice, ProductDescription, ProductImgURL) VALUES ('$pName','$pType','$pCondition',$pPrice,'$pDescription','$pImg')"; // building a string with the SQL INSERT you want to run
+        $sql = "INSERT INTO products (ProductName, ProductType, ProductCondition, ProductPrice, ProductDescription, ProductImgURL) 
+        VALUES ('$pName','$pType','$pCondition',$pPrice,'$pDescription','$pImg')"; // building a string with the SQL INSERT you want to run
           
         // use exec() because no results are returned
         $this->db->exec($sql);

@@ -1,21 +1,21 @@
 <?php
   require_once '../../config/database.php';
 
-  if($user->is_loggedin()) {
-  $user->redirect('home.php');
+  if($user->isLoggedIn()) {
+    $user->redirect('home.php');
   }
 
   if($_SERVER['REQUEST_METHOD'] == 'POST') {
-  $uname = $_POST['i_uname'];
-  $upass = $_POST['i_password'];
+    $uname = $_POST['username'];
+    $upass = $_POST['password'];
     
     if($user->login($uname,$upass)) {
       $user->redirect('./home.php');
     } else {
       $error = "Wrong Details!";
     }
-
   }
+
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -37,11 +37,14 @@
             }
           ?>
             <div class="form-group">
-             <input type="text" class="form-control" name="i_uname" placeholder="username" required />
+            <label for="username">Enter username:</label>
+             <input type="text" class="form-control" name="username" placeholder="username" value="gnidloGnaneeK" required />
             </div>
             <div class="form-group">
-             <input type="password" class="form-control" name="i_password" placeholder="password" required />
+            <label for="username">Enter password:</label>
+             <input type="password" class="form-control" name="password" placeholder="password" value="12ad34mi56n" required />
             </div>
+            <small><i>*pre-populated for easy login (would not do this real world)</i></small>
             <div class="clearfix"></div><hr />
             <div class="form-group">
              <button type="submit" class="btn btn-block btn-primary">

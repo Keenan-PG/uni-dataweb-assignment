@@ -9,7 +9,7 @@
 <body>
     <?php
         require_once '../config/database.php';
-        $customer -> showProducts();
+        $customer->showProducts();
     ?>
 </body>
 </html>
