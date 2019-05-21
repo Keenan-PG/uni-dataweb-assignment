@@ -8,3 +8,4 @@ assets - images etc
 public - customer facing side of site
 admin - admin facing side of site
 classes - classes for customer & admins
+config - db connection & creating objects - passing connection to them (to access front end)

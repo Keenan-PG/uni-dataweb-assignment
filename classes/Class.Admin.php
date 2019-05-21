@@ -1,5 +1,5 @@
 <?php
-class USER
+class ADMIN
 {
    // private db var - security
     private $db;
