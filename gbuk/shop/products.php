@@ -7,6 +7,7 @@
     <title>View Products | Take2Tech</title>
 </head>
 <body>
+    <h1>Our products</h1>
     <?php
         require_once '../../config/database.php';
         $customer->showProducts();

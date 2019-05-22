@@ -9,7 +9,8 @@ class CUSTOMER
     {
       $this->db = $DB_con;
     }
-    // method to call on front end 
+
+    // show all products
     public function showProducts() {
         try
        {
@@ -23,10 +24,14 @@ class CUSTOMER
               echo '<img class="productBlock-Img" src="'. $row['ProductImgURL'] .'"';
               echo '<div class="productBlock-Body">';
                 echo '<h5 class="productBlock-Title">'. $row['ProductName'] .'</h5>';
-                echo '<small>Condition: <i>'. $row['ProductCondition'] .'</i></small>';
+                echo '<p>Price: £'. $row['ProductPrice'] .'</p>';
+                echo '<small>Condition: <i>'. $row['ProductCondition'] .'</i></small><br />';
                 echo '<small>Category: <strong>'. $row['ProductType'] .'</strong></small>';
                 echo '<p class="productBlock-Text">'. $row['ProductDescription'] .'</p>';
-                echo '<a href="#"><button>Reserve/Test Product</button></a>';
+                echo '<form method="GET" action="reserve-product.php">';
+                  echo '<input type="hidden" name="productID" value="'. $row['ProductID'] .'">';
+                  echo '<input type="submit" class"button" value="Reserve/Test Product">';
+                echo '</form>';
               echo '</div>';
             echo '</div>';
          }
@@ -38,6 +43,65 @@ class CUSTOMER
            echo $e->getMessage();
        }
     }
+
+    // Using productID to get productName
+    // yes I could just include name in GET request, but because only pID is needed for customer reservation - i found is better to do as it's plainly cosmetic. 
+    public function getProductname($pID) {
+      try
+     {
+       // function variable
+        $result;
+        // getting product name from ID 
+        $sqlGetPName = "SELECT * FROM products WHERE ProductID='$pID'";
+  
+        // breaking productName out of results array
+        foreach($this->db->query($sqlGetPName) as $row){
+          // saving into above variable
+           $result = $row['ProductName'];
+        }
+  
+        // returning
+        return $result;
+     }
+     catch(PDOException $e)
+     {
+         echo $e->getMessage();
+     }
+    }
+
+    // method to call on front end 
+    public function reserveProduct($cName, $cEmail, $cPhone, $pID, $rForTime) {
+      try
+     {
+       // putting in customer record first
+        $sqlCustomer = "INSERT INTO customers (CUSTOMERNAME, CUSTOMEREMAIL, CUSTOMERPHONE) VALUES ('$cName','$cEmail','$cPhone')"; 
+
+        // use exec() because no results are returned
+        $this->db->exec($sqlCustomer);
+
+        // getting customer ID from record created
+        $sqlGetCID = "SELECT CUSTOMERID FROM customers WHERE CUSTOMERNAME='$cName'";
+
+        // saving customer ID
+        $cID = $this->db->query($sqlGetCID);
+
+        // adding into reservations
+        $sqlReservation = "INSERT INTO reservations (CUSTOMERID, ProductID, ReserveForTime) VALUES ('$cID','$pID','$rForTime')"; 
+           
+        // use exec() because no results are returned
+        $this->db->exec($sqlReservation);
+
+        // returning true for conditional
+        return true;
+     }
+     catch(PDOException $e)
+     {
+         echo $e->getMessage();
+
+         // returning true for conditional
+         return false;
+     }
+  }
     
 }
 ?>

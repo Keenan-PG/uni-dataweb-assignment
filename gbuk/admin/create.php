@@ -12,8 +12,13 @@
         $pPrice = $_POST['i_pPrice'];
         $pDescription = $_POST['i_pDescription'];
         $pImg = $_POST['i_pImgURL'];
+
+        // throws error if string has ' in it.
+        $strPDescription = str_replace("'", '', $pDescription);
+        // for parsing 
+        $strPImg = (string)$pImg;
         
-        $admin->saveProduct($pName,$pType,$pCondition,$pPrice,$pDescription,$pImg);
+        $admin->saveProduct($pName,$pType,$pCondition,$pPrice,$strPDescription,$strPImg);
     }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
