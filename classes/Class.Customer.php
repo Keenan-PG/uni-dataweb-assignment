@@ -9,7 +9,6 @@ class CUSTOMER
     {
       $this->db = $DB_con;
     }
-
     // method to call on front end 
     public function showProducts() {
         try
