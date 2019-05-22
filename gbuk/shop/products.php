@@ -8,7 +8,7 @@
 </head>
 <body>
     <?php
-        require_once '../config/database.php';
+        require_once '../../config/database.php';
         $customer->showProducts();
     ?>
 </body>

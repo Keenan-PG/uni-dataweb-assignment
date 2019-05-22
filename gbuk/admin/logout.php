@@ -3,7 +3,7 @@
 
     if($admin->isLoggedIn()) {
         $admin->userLogout();
-        $admin->redirect('../../public/home.php');
+        $admin->redirect('../../gbuk/shop/home.php');
         echo 'Logged out :)';
     }
 ?>
