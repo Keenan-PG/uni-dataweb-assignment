@@ -19,7 +19,17 @@ class CUSTOMER
             
          // running foreach using above db connection (passed from database.php) to query db with above sql statement
          foreach($this->db->query($sql) as $row){
-             echo 'Field 1: ' . $row['ProductName'] . '<br>';
+           // making a product "block" 
+            echo '<div class="productBlock">';
+              echo '<img class="productBlock-Img" src="'. $row['ProductImgURL'] .'"';
+              echo '<div class="productBlock-Body">';
+                echo '<h5 class="productBlock-Title">'. $row['ProductName'] .'</h5>';
+                echo '<small>Condition: <i>'. $row['ProductCondition'] .'</i></small>';
+                echo '<small>Category: <strong>'. $row['ProductType'] .'</strong></small>';
+                echo '<p class="productBlock-Text">'. $row['ProductDescription'] .'</p>';
+                echo '<a href="#"><button>Reserve/Test Product</button></a>';
+              echo '</div>';
+            echo '</div>';
          }
      
        }

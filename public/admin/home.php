@@ -30,6 +30,7 @@ include_once '../../config/database.php';
     </div>
     <div class="content">
         Welcome <?php print($userRow['Username']); ?> :)
+        <a href="./create.php">Create Product(s)</a>
     </div>
 </body>
 </html>
