@@ -1,8 +1,8 @@
 <?php
     require_once '../../config/database.php';
 
-    if(!$admin->is_loggedin()) {
-        $admin->redirect('home.php');
+    if(!$admin->isLoggedIn()) {
+        $admin->redirect('./login.php');
     }
 
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
