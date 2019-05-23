@@ -31,7 +31,7 @@
     </div>
     <div class="content">
         Welcome <?php print($userRow['Username']); ?> :)
-        <a href="./create.php">Create Product(s)</a>
+        <a href="./create-product.php">Create Product(s)</a>
     </div>
 </body>
 </html>

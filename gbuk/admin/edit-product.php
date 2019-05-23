@@ -30,6 +30,7 @@
 <link rel="stylesheet" href="style.css" type="text/css"  />
 </head>
 <body>
+    <a href="all.php">Back</a>
 <div class="container">
      <div class="form-container">
         <form method="post">
