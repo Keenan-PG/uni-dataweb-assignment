@@ -14,7 +14,7 @@
         include_once '../../../../classes/Class.Customer.php'; // customer class
         require_once '../../../../config/customer-conf.php'; // db and customer object
 
-        // setting to pc for switch
+        // setting to pc for switch (filtering)
         $input="PC";
 
         // giving input to showProducts

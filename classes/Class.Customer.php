@@ -32,6 +32,15 @@ class CUSTOMER
         case "OT":
             $sql = "SELECT * FROM products WHERE ProductType='Other'";
             break;
+        case "new":
+            $sql = "SELECT * FROM products WHERE ProductCondition='New'";
+            break;
+        case "used":
+            $sql = "SELECT * FROM products WHERE ProductCondition='Used'";
+            break;
+        case "refurb":
+            $sql = "SELECT * FROM products WHERE ProductCondition='Refurbished'";
+            break;
         case "all": // default param
             $sql = "SELECT * FROM products ORDER BY ProductName DESC";
             break;
@@ -53,7 +62,7 @@ class CUSTOMER
                 echo '<small>Condition: <i>'. $row['ProductCondition'] .'</i></small><br />';
                 echo '<small>Category: <strong>'. $row['ProductType'] .'</strong></small>';
                 echo '<p class="productBlock-Text">'. $row['ProductDescription'] .'</p>';
-                echo '<form method="GET" action="reserve-product.php">';
+                echo '<form method="GET" action="products/reserve.php">';
                   echo '<input type="hidden" name="productID" value="'. $row['ProductID'] .'">';
                   echo '<input type="submit" class"button" value="Reserve/Test Product">';
                 echo '</form>';

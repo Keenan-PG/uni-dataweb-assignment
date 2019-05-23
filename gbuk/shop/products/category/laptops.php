@@ -10,11 +10,11 @@
     <h1>Laptops</h1>
     <?php
     
-    // DB AND CONFIG
-    include_once '../../../../classes/Class.Customer.php'; // customer class
-    require_once '../../../../config/customer-conf.php'; // db and customer object
+        // DB AND CONFIG
+        include_once '../../../../classes/Class.Customer.php'; // customer class
+        require_once '../../../../config/customer-conf.php'; // db and customer object
 
-        // setting to lt for switch
+        // setting to lt for switch (filtering)
         $input="LT";
 
         // giving input to showProducts
