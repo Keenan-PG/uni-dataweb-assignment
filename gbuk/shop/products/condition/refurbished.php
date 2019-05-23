@@ -7,6 +7,7 @@
     <title>Refurbished Products | Take2Tech</title>
 </head>
 <body>
+    <a href="../../products.php">Back</a>
     <h1>Refurbished Products</h1>
     <?php
     

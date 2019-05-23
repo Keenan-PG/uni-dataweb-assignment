@@ -7,6 +7,7 @@
     <title>Laptops | Take2Tech</title>
 </head>
 <body>
+    <a href="../../products.php">Back</a>
     <h1>Laptops</h1>
     <?php
     

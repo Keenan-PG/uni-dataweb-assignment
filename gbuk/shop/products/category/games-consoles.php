@@ -7,6 +7,7 @@
     <title>Games Consoles | Take2Tech</title>
 </head>
 <body>
+    <a href="../../products.php">Back</a>
     <h1>Games Consoles</h1>
     <?php
     

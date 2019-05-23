@@ -7,6 +7,7 @@
     <title>Miscellaneous products | Take2Tech</title>
 </head>
 <body>
+    <a href="../../products.php">Back</a>
     <h1>Miscellaneous products</h1>
     <?php
     
