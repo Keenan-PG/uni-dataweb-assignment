@@ -8,6 +8,6 @@ Decided to go for a object-oriented approach.
 - config - db connection & creating objects - passing connection to them (to access front end)
 - classes - classes for customer & admins
 - gbuk - public directory
--- admin - admin facing side of site
--- shop - customer facing
---- products - product sorting pages & reservation func
+- admin - admin facing side of site
+- shop - customer facing
+- products - product sorting pages & reservation func
