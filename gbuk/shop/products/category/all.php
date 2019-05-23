@@ -7,6 +7,7 @@
     <title>All Products | Take2Tech</title>
 </head>
 <body>
+    <a href="../../home.php">Back</a>
     <h1>All products</h1>
 
     <p>Products by condition:</p>
@@ -33,8 +34,8 @@
 
     <?php
         // DB AND CONFIG
-        include_once '../../../classes/Class.Customer.php'; // customer class
-        require_once '../../../config/customer-conf.php'; // db and customer object
+        include_once '../../../../classes/Class.Customer.php'; // customer class
+        require_once '../../../../config/customer-conf.php'; // db and customer object
 
         $customer->showProducts();
     ?>
