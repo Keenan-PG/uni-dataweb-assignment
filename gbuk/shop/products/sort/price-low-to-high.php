@@ -7,7 +7,7 @@
     <title>Price low to high | Take2Tech</title>
 </head>
 <body>
-    <a href="../../category/all.php">Back</a>
+    <a href="../category/all.php">Back</a>
     <h1>Prices: Low to High</h1>
     <?php
     

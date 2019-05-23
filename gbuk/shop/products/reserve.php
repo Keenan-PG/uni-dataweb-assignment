@@ -8,7 +8,7 @@
 </head>
 <body>
     <a href="../home.php">Home</a>
-    <a href="all.php">Products</a>
+    <a href="category/all.php">Products</a>
     <?php
         // DB AND CONFIG
         include_once '../../../classes/Class.Customer.php'; // customer class

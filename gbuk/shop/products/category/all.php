@@ -12,24 +12,24 @@
 
     <p>Products by condition:</p>
     <ul>
-        <li><a href="condition/new.php">New</a></li>
-        <li><a href="condition/used.php">Used</a></li>
-        <li><a href="condition/refurbished.php">Refurbished</a></li>
+        <li><a href="../condition/new.php">New</a></li>
+        <li><a href="../condition/used.php">Used</a></li>
+        <li><a href="../condition/refurbished.php">Refurbished</a></li>
     </ul>
 
     <p>Products by category:</p>
     <ul>
-        <li><a href="category/extended-reality.php">Extended Reality (AR/VR)</a></li>
-        <li><a href="category/games-consoles.php">Games Consoles</a></li>
-        <li><a href="category/laptops.php">Laptops</a></li>
-        <li><a href="category/personal-computers.php">Personal Computers</a></li>
-        <li><a href="category/other.php">Other</a></li>
+        <li><a href="../category/extended-reality.php">Extended Reality (AR/VR)</a></li>
+        <li><a href="../category/games-consoles.php">Games Consoles</a></li>
+        <li><a href="../category/laptops.php">Laptops</a></li>
+        <li><a href="../category/personal-computers.php">Personal Computers</a></li>
+        <li><a href="../category/other.php">Other</a></li>
     </ul>
 
     <p>Filter:</p>
     <ul>
-        <li><a href="sort/price-low-to-high.php">Price Low to High</a></li>
-        <li><a href="sort/price-high-to-low.php">Price High to Low</a></li>
+        <li><a href="../sort/price-low-to-high.php">Price Low to High</a></li>
+        <li><a href="../sort/price-high-to-low.php">Price High to Low</a></li>
     </ul>
 
     <?php
