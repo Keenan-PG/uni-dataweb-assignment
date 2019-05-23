@@ -9,9 +9,10 @@
 <body>
     <h1>Extended Reality products</h1>
     <?php
-        include_once '../../../../classes/Class.Admin.php';
-        include_once '../../../../classes/Class.Customer.php';
-        require_once '../../../../config/database.php';
+    
+    // DB AND CONFIG
+    include_once '../../../../classes/Class.Customer.php'; // customer class
+    require_once '../../../../config/customer-conf.php'; // db and customer object
         
         // setting to xr for switch
         $input="XR";

@@ -9,7 +9,10 @@
 <body>
     <h1>Personal Computers</h1>
     <?php
-        require_once '../../config/database.php';
+    
+        // DB AND CONFIG
+        include_once '../../../../classes/Class.Customer.php'; // customer class
+        require_once '../../../../config/customer-conf.php'; // db and customer object
 
         // setting to pc for switch
         $input="PC";

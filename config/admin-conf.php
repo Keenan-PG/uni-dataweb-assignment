@@ -19,9 +19,8 @@ catch(PDOException $e)
 }
 
 
+include_once '../../classes/Class.Admin.php'; // admin class
 $admin = new ADMIN($conn);
-// creating new USER object passing in connection
-$customer = new CUSTOMER($conn);
-// creating new CUSTOMER object passing in connection
+// creating new ADMIN object passing in connection
 
 ?>

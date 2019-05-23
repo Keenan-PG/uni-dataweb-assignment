@@ -1,5 +1,6 @@
 <?php
-    require_once '../../config/database.php';
+    // DB AND CONFIG
+    require_once '../../config/admin-conf.php'; // db and admin object
 
     if(!$admin->isLoggedIn()) {
         $admin->redirect('./login.php');

@@ -4,13 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>View Products | Take2Tech</title>
+    <title>Reserve a product | Take2Tech</title>
 </head>
 <body>
     <a href="home.php">Home</a>
     <a href="products.php">Products</a>
     <?php
-        require_once '../../config/database.php';
+        // DB AND CONFIG
+        include_once '../../../classes/Class.Customer.php'; // customer class
+        require_once '../../../config/customer-conf.php'; // db and creating customer object
 
         if($_SERVER['REQUEST_METHOD'] == 'GET') {
 

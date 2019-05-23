@@ -37,7 +37,7 @@ class CUSTOMER
             break;
         default: 
             break;
-    }
+      }
     
         try
        {

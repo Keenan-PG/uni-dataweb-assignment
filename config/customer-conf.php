@@ -19,8 +19,6 @@ catch(PDOException $e)
 }
 
 
-$admin = new ADMIN($conn);
-// creating new USER object passing in connection
 $customer = new CUSTOMER($conn);
 // creating new CUSTOMER object passing in connection
 
