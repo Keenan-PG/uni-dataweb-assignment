@@ -41,6 +41,12 @@ class CUSTOMER
         case "refurb":
             $sql = "SELECT * FROM products WHERE ProductCondition='Refurbished'";
             break;
+        case "price-asc":
+            $sql = "SELECT * FROM products ORDER BY ProductPrice ASC";
+            break;
+        case "price-desc":
+            $sql = "SELECT * FROM products ORDER BY ProductPrice DESC";
+            break;
         case "all": // default param
             $sql = "SELECT * FROM products ORDER BY ProductName DESC";
             break;
@@ -62,7 +68,7 @@ class CUSTOMER
                 echo '<small>Condition: <i>'. $row['ProductCondition'] .'</i></small><br />';
                 echo '<small>Category: <strong>'. $row['ProductType'] .'</strong></small>';
                 echo '<p class="productBlock-Text">'. $row['ProductDescription'] .'</p>';
-                echo '<form method="GET" action="products/reserve.php">';
+                echo '<form method="GET" action="../reserve.php">';
                   echo '<input type="hidden" name="productID" value="'. $row['ProductID'] .'">';
                   echo '<input type="submit" class"button" value="Reserve/Test Product">';
                 echo '</form>';

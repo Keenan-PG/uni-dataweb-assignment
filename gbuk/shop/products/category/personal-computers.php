@@ -7,7 +7,7 @@
     <title>Personal Computers | Take2Tech</title>
 </head>
 <body>
-    <a href="../../products.php">Back</a>
+    <a href="../all.php">Back</a>
     <h1>Personal Computers</h1>
     <?php
     

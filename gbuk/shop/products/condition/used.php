@@ -7,7 +7,7 @@
     <title>Used Products | Take2Tech</title>
 </head>
 <body>
-    <a href="../../products.php">Back</a>
+    <a href="../all.php">Back</a>
     <h1>Used Products</h1>
     <?php
     

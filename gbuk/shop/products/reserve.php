@@ -7,8 +7,8 @@
     <title>Reserve a product | Take2Tech</title>
 </head>
 <body>
-    <a href="home.php">Home</a>
-    <a href="products.php">Products</a>
+    <a href="../home.php">Home</a>
+    <a href="all.php">Products</a>
     <?php
         // DB AND CONFIG
         include_once '../../../classes/Class.Customer.php'; // customer class

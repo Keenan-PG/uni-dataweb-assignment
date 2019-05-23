@@ -7,7 +7,7 @@
     <title>New Products | Take2Tech</title>
 </head>
 <body>
-    <a href="../../products.php">Back</a>
+    <a href="../all.php">Back</a>
     <h1>New products</h1>
     <?php
     

@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>HOME</h1>
-    <a href="products.php">Products</a>
+    <a href="products/all.php">Products</a>
     <a href="../admin/login.php">Employee login</a>
 </body>
 </html>

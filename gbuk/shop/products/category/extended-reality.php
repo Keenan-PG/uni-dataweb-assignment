@@ -7,7 +7,7 @@
     <title>Extended Reality Products | Take2Tech</title>
 </head>
 <body>
-    <a href="../../products.php">Back</a>
+    <a href="../all.php">Back</a>
     <h1>Extended Reality products</h1>
     <?php
     
