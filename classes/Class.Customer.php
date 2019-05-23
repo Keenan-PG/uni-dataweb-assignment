@@ -11,7 +11,7 @@ class CUSTOMER
     }
 
     // show all products
-    public function showProducts() {
+    public function showAllProducts() {
         try
        {
           // saving select all as string 
@@ -80,10 +80,16 @@ class CUSTOMER
         $this->db->exec($sqlCustomer);
 
         // getting customer ID from record created
-        $sqlGetCID = "SELECT CUSTOMERID FROM customers WHERE CUSTOMERNAME='$cName'";
+        $sqlGetCID = "SELECT * FROM customers WHERE CUSTOMERNAME='$cName'";
 
-        // saving customer ID
-        $cID = $this->db->query($sqlGetCID);
+        // saving customer var to assign to later
+        $cID;
+
+        // breaking CUSTOMERID out of results array
+        foreach($this->db->query($sqlGetCID) as $row){
+          // saving into above variable
+           $cID = $row['CUSTOMERID'];
+        }
 
         // adding into reservations
         $sqlReservation = "INSERT INTO reservations (CUSTOMERID, ProductID, ReserveForTime) VALUES ('$cID','$pID','$rForTime')"; 
@@ -101,6 +107,13 @@ class CUSTOMER
          // returning true for conditional
          return false;
      }
+  }
+
+
+  // small method to simplify redirects 
+  public function redirect($url)
+  {
+      header("Location: $url");
   }
     
 }
