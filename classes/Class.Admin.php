@@ -105,7 +105,6 @@ class ADMIN
             echo '<tr>';
                echo '<th>Product Name</th>';
                echo '<th>Product Price</th>';
-               echo '<th>Product Condition</th>';
                echo '<th>Product Description</th>';
                echo '<th>Edit Product</th>';
                echo '<th>Delete Product</th>';
@@ -114,24 +113,25 @@ class ADMIN
       foreach($this->db->query($sql) as $row){
 
          // editable 
-         // Product Name, Price, Condition, Description
+         // Product Name, Price, Description - any of the other fields being edited just indicates a new product should be made.
          // making table with button for respective ID of product (to edit/delete)
 
          
             echo '<tr>';
                echo '<th>'. $row['ProductName'] .'</th>';
                echo '<th>'. $row['ProductPrice'] .'</th>';
-               echo '<th>'. $row['ProductCondition'] .'</th>';
                echo '<th>'. $row['ProductDescription'] .'</th>';
                echo '<th>';
                   echo '<form method="get" action="./edit-product.php">';
                      echo '<input type="hidden" name="productID" value="'. $row['ProductID'] .'">';
+                     echo '<input type="hidden" name="productName" value="'. $row['ProductName'] .'">';
                      echo '<input type="submit" class"button" value="Edit">';
                   echo '</form>';
                echo '</th>';               
                echo '<th>';
                   echo '<form method="get" action="./remove-product.php">';
                      echo '<input type="hidden" name="productID" value="'. $row['ProductID'] .'">';
+                     echo '<input type="hidden" name="productName" value="'. $row['ProductName'] .'">';
                      echo '<input type="submit" class"button" value="Delete">';
                   echo '</form>';
                echo '</th>';
@@ -147,6 +147,63 @@ class ADMIN
     }
  }
 
+ public function populateEditForm($pID) {
+     
+   try
+   {
+     $sql = "SELECT * FROM products WHERE ProductID='$pID'";
+
+     // running foreach using above db connection (passed from database.php) to query db with above sql statement
+     foreach($this->db->query($sql) as $row){
+
+        // generating form inputs with pre-filled values
+         echo '<div class="form-group">';
+            echo '<input type="text" class="form-control" name="edit_pName" value="'. $row['ProductName'] .'" required />';
+         echo '</div>';
+         echo '<div class="form-group">';
+            echo '<input type="text" class="form-control" name="edit_pPrice" value="'. $row['ProductPrice'] .'" required />';
+         echo '</div>';
+         echo '<div class="form-group">';
+            echo '<input type="text" class="form-control" name="edit_pDescription" value="'. $row['ProductDescription'] .'" required />';
+         echo '</div>';
+     }
+ 
+   }
+  //  error handling
+   catch(PDOException $e)
+   {
+       echo $e->getMessage();
+   }
+ }
+
+ public function editProduct($pID, $pName, $pPrice, $pDesc) {
+     
+   try
+   {
+     $sql = "SELECT * FROM products WHERE ProductID='$pID'";
+
+     // running foreach using above db connection (passed from database.php) to query db with above sql statement
+     foreach($this->db->query($sql) as $row){
+
+        // generating form inputs with pre-filled values
+         echo '<div class="form-group">';
+            echo '<input type="text" class="form-control" name="edit_pName" value="'. $row['ProductName'] .'" required />';
+         echo '</div>';
+         echo '<div class="form-group">';
+            echo '<input type="text" class="form-control" name="edit_pPrice" value="'. $row['ProductPrice'] .'" required />';
+         echo '</div>';
+         echo '<div class="form-group">';
+            echo '<input type="text" class="form-control" name="edit_pDesc" value="'. $row['ProductDescription'] .'" required />';
+         echo '</div>';
+     }
+ 
+   }
+  //  error handling
+   catch(PDOException $e)
+   {
+       echo $e->getMessage();
+   }
+ }
 
 }
 ?>
