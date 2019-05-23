@@ -95,6 +95,58 @@ class ADMIN
      }
   }
 
+  public function showProducts() {
+ 
+     try
+    {
+      $sql = "SELECT * FROM products ORDER BY ProductID ASC";
+
+      echo '<table>';
+            echo '<tr>';
+               echo '<th>Product Name</th>';
+               echo '<th>Product Price</th>';
+               echo '<th>Product Condition</th>';
+               echo '<th>Product Description</th>';
+               echo '<th>Edit Product</th>';
+               echo '<th>Delete Product</th>';
+            echo '</tr>';
+      // running foreach using above db connection (passed from database.php) to query db with above sql statement
+      foreach($this->db->query($sql) as $row){
+
+         // editable 
+         // Product Name, Price, Condition, Description
+         // making table with button for respective ID of product (to edit/delete)
+
+         
+            echo '<tr>';
+               echo '<th>'. $row['ProductName'] .'</th>';
+               echo '<th>'. $row['ProductPrice'] .'</th>';
+               echo '<th>'. $row['ProductCondition'] .'</th>';
+               echo '<th>'. $row['ProductDescription'] .'</th>';
+               echo '<th>';
+                  echo '<form method="get" action="./edit-product.php">';
+                     echo '<input type="hidden" name="productID" value="'. $row['ProductID'] .'">';
+                     echo '<input type="submit" class"button" value="Edit">';
+                  echo '</form>';
+               echo '</th>';               
+               echo '<th>';
+                  echo '<form method="get" action="./remove-product.php">';
+                     echo '<input type="hidden" name="productID" value="'. $row['ProductID'] .'">';
+                     echo '<input type="submit" class"button" value="Delete">';
+                  echo '</form>';
+               echo '</th>';
+      }
+      echo '</tr>';
+   echo '</table>';
+  
+    }
+   //  error handling
+    catch(PDOException $e)
+    {
+        echo $e->getMessage();
+    }
+ }
+
 
 }
 ?>

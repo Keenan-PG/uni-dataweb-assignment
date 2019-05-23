@@ -26,10 +26,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Create Product | T2T</title>
+<title>Reservations | T2T</title>
 <link rel="stylesheet" href="style.css" type="text/css"  />
 </head>
 <body>
+    <a href="home.php">Back</a>
 <div class="container">
      <div class="form-container">
         <form method="post">

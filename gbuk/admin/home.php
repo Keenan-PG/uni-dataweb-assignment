@@ -32,6 +32,11 @@
     <div class="content">
         Welcome <?php print($userRow['Username']); ?> :)
         <a href="./create-product.php">Create Product(s)</a>
+        <a href="./reservations.php">Reservations</a>
+
+        <?php 
+            $admin->showProducts();
+        ?>
     </div>
 </body>
 </html>
