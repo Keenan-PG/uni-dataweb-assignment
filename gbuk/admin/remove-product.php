@@ -2,24 +2,27 @@
     // DB AND CONFIG
     require_once '../../config/admin-conf.php'; // db and admin object
 
+    //making sure we're logged in
     if(!$admin->isLoggedIn()) {
         $admin->redirect('./login.php');
     }
 
-    if($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $pName = $_POST['i_pName'];
-        $pType = $_POST['i_pType'];
-        $pCondition = $_POST['i_pCondition'];
-        $pPrice = $_POST['i_pPrice'];
-        $pDescription = $_POST['i_pDescription'];
-        $pImg = $_POST['i_pImgURL'];
+    // get is grabbing id & name from home.php, post is actually deleting it with button below
+    if($_SERVER['REQUEST_METHOD'] == 'GET') {
 
-        // throws error if string has ' in it.
-        $strPDescription = str_replace("'", '', $pDescription);
-        // for parsing 
-        $strPImg = (string)$pImg;
+      // saving variables passed from admin/home.php
+      $pID = $_GET['productID'];
+      $pName = $_GET['productName'];
+
+    } else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
-        $admin->saveProduct($pName,$pType,$pCondition,$pPrice,$strPDescription,$strPImg);
+      // deleting product
+      $pID = $_POST['productID'];
+
+      $admin->deleteProduct($pID);
+      
+      echo '<p>Product Deleted!</p>';
+      echo '<a href="home.php">Go back home?</a>';
     }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -31,54 +34,22 @@
 </head>
 <body>
     <a href="home.php">Back</a>
-<div class="container">
-     <div class="form-container">
-        <form method="post">
-            <h2>Create a product</h2><hr />
-          <?php
-            if(isset($error)) {
-          ?>
-            <p>Error: <?php echo $error; ?></p>
-          <?php
-            }
-          ?>
-            <div class="form-group">
-             <input type="text" class="form-control" name="i_pName" placeholder="product name" required />
-            </div>
-            <div class="form-group">
-              <select name="i_pType">
-                <option value="Personal Computer">Personal Computer</option>
-                <option value="Laptop">Laptop</option>
-                <option value="Games Console">Games Console</option>
-                <option value="Virtual/Augmented Reality">Virtual/Augmented Reality</option>
-                <option value="Other">Other</option>
-              </select>
-            </div>
-            <div class="form-group">
-             <input type="text" class="form-control" name="i_pImgURL" placeholder="product img url" required />
-            </div>
-            <div class="form-group">
-             <input type="text" class="form-control" name="i_pPrice" placeholder="product price" required />
-            </div>
-            <div class="form-group">
-              <select name="i_pCondition">
-                <option value="new">New</option>
-                <option value="used">Used</option>
-                <option value="refurbished">Refurbished</option>
-              </select>
-            </div>
-            <div class="form-group">
-             <input type="textarea" class="form-control" name="i_pDescription" placeholder="product description" required />
-            </div>
-            <div class="clearfix"></div><hr />
-            <div class="form-group">
-                <button type="submit" class="btn btn-block btn-primary">
-                    Create Product
-                </button>
-            </div>
-        </form>
-       </div>
-</div>
-
+    <div class="container">
+        <div class="form-container">
+            <form method="post">
+                <?php
+                  if(isset($pName)) {
+                ?>
+                    <h1>Delete product: <?php echo $pName; ?></h1>
+                <?php
+                  }
+                ?>
+                <p>Are you sure you want to delete this product?</p>
+                <input type="hidden" class="form-control" name="productID" value="<?php echo $pID; ?>" required />
+                <input type="submit" value="Confirm">
+            </form>
+                <a href="home.php"><button>No</button></a>
+          </div>
+    </div>
 </body>
 </html>

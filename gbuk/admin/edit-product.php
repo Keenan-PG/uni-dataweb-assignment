@@ -8,22 +8,23 @@
 
     if($_SERVER['REQUEST_METHOD'] == 'GET') {
 
+      // saving variables passed from admin/home.php
       $pID = $_GET['productID'];
       $pName = $_GET['productName'];
 
     } else if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
-      $pID = $_POST['i_pID'];
-      $cName = $_POST['i_cName']; 
-      $cEmail = $_POST['i_cEmail']; 
-      $cPhone = $_POST['i_cPhone']; 
-      $rForTime = $_POST['i_rTime']; 
+      // saving variables from edit from
+      $pID = $_POST['edit_pID']; 
+      $pName = $_POST['edit_pName']; 
+      $pPrice = $_POST['edit_pPrice']; 
+      $pDesc = $_POST['edit_pDesc']; 
 
-      //cosmetics
-      $pName = $customer->getProductName($pID);
+      // executing edit method
+      $admin->editProduct($pID, $pName, $pPrice, $pDesc);
 
-      $customer->reserveProduct($cName,$cEmail,$cPhone,$pID, $rForTime);
-      echo '<p>'.$cName.'! You reserved '.$pName.' for date/time: '.$rForTime.'</p>';
+      echo '<p>Edit saved. :)</p>';
+      echo '<a href="home.php">Go back home?</a>';
     }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

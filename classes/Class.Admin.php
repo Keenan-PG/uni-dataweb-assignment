@@ -158,35 +158,7 @@ class ADMIN
 
         // generating form inputs with pre-filled values
          echo '<div class="form-group">';
-            echo '<input type="text" class="form-control" name="edit_pName" value="'. $row['ProductName'] .'" required />';
-         echo '</div>';
-         echo '<div class="form-group">';
-            echo '<input type="text" class="form-control" name="edit_pPrice" value="'. $row['ProductPrice'] .'" required />';
-         echo '</div>';
-         echo '<div class="form-group">';
-            echo '<input type="text" class="form-control" name="edit_pDescription" value="'. $row['ProductDescription'] .'" required />';
-         echo '</div>';
-     }
- 
-   }
-  //  error handling
-   catch(PDOException $e)
-   {
-       echo $e->getMessage();
-   }
- }
-
- public function editProduct($pID, $pName, $pPrice, $pDesc) {
-     
-   try
-   {
-     $sql = "SELECT * FROM products WHERE ProductID='$pID'";
-
-     // running foreach using above db connection (passed from database.php) to query db with above sql statement
-     foreach($this->db->query($sql) as $row){
-
-        // generating form inputs with pre-filled values
-         echo '<div class="form-group">';
+            echo '<input type="hidden" class="form-control" name="edit_pID" value="'. $row['ProductID'] .'" required />';
             echo '<input type="text" class="form-control" name="edit_pName" value="'. $row['ProductName'] .'" required />';
          echo '</div>';
          echo '<div class="form-group">';
@@ -197,6 +169,46 @@ class ADMIN
          echo '</div>';
      }
  
+   }
+  //  error handling
+   catch(PDOException $e)
+   {
+       echo $e->getMessage();
+   }
+ }
+ 
+ public function editProduct($pID, $pName, $pPrice, $pDesc) {
+     
+   try
+   {
+      //preparing sql statement to update
+      $sql = $this->db->prepare("UPDATE products SET ProductName = ?, ProductPrice = ?, ProductDescription = ? WHERE productID =?");
+      $sql -> bindValue(1, "$pName"); 
+      $sql -> bindValue(2, "$pPrice"); 
+      $sql -> bindValue(3, "$pDesc"); 
+      $sql -> bindValue(4, $pID); 
+      
+      // executing statement
+      $sql -> execute();
+   }
+  //  error handling
+   catch(PDOException $e)
+   {
+       echo $e->getMessage();
+   }
+ }
+
+
+ public function deleteProduct($pID) {
+     
+   try
+   {
+
+      $sql = $this->db->prepare("DELETE FROM products WHERE ProductID = ?");
+      $sql -> bindValue(1, $pID); //we bind this variable to the first ? in the sql statement
+     
+      $sql -> execute(); //execute the statement
+
    }
   //  error handling
    catch(PDOException $e)
