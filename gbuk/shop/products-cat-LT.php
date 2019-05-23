@@ -7,10 +7,15 @@
     <title>Laptops | Take2Tech</title>
 </head>
 <body>
-    <h1>Our products</h1>
+    <h1>Laptops</h1>
     <?php
         require_once '../../config/database.php';
-        $customer->showProducts();
+
+        // setting to lt for switch
+        $input="LT";
+
+        // giving input to showProducts
+        $customer->showProducts($input);
     ?>
 </body>
 </html>

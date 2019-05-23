@@ -7,10 +7,15 @@
     <title>Personal Computers | Take2Tech</title>
 </head>
 <body>
-    <h1>Our products</h1>
+    <h1>Personal Computers</h1>
     <?php
         require_once '../../config/database.php';
-        $customer->showProducts();
+
+        // setting to pc for switch
+        $input="PC";
+
+        // giving input to showProducts
+        $customer->showProducts($input);
     ?>
 </body>
 </html>

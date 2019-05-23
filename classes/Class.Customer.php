@@ -11,11 +11,36 @@ class CUSTOMER
     }
 
     // show all products
-    public function showAllProducts() {
+    public function showProducts($filter="all") {
+      // function variable to assign below
+      $sql;
+
+      // changing 
+      switch ($filter) {
+        case "PC":
+            $sql = "SELECT * FROM products WHERE ProductType='Personal Computer'";
+            break;
+        case "GC":
+            $sql = "SELECT * FROM products WHERE ProductType='Games Console'";
+            break;
+        case "LT":
+            $sql = "SELECT * FROM products WHERE ProductType='Laptop'";
+            break;
+        case "XR":
+            $sql = "SELECT * FROM products WHERE ProductType='Virtual/Augmented Reality'";
+            break;
+        case "OT":
+            $sql = "SELECT * FROM products WHERE ProductType='Other'";
+            break;
+        case "all": // default param
+            $sql = "SELECT * FROM products ORDER BY ProductName DESC";
+            break;
+        default: 
+            break;
+    }
+    
         try
        {
-          // saving select all as string 
-         $sql = "SELECT * FROM products ORDER BY ProductName DESC";
             
          // running foreach using above db connection (passed from database.php) to query db with above sql statement
          foreach($this->db->query($sql) as $row){

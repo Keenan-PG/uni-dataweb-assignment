@@ -7,10 +7,15 @@
     <title>Extended Reality Products | Take2Tech</title>
 </head>
 <body>
-    <h1>Our products</h1>
+    <h1>Extended Reality products</h1>
     <?php
         require_once '../../config/database.php';
-        $customer->showProducts();
+        
+        // setting to xr for switch
+        $input="XR";
+        
+        // giving input to showProducts
+        $customer->showProducts($input);
     ?>
 </body>
 </html>

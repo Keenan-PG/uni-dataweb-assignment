@@ -7,10 +7,15 @@
     <title>Games Consoles | Take2Tech</title>
 </head>
 <body>
-    <h1>Our products</h1>
+    <h1>Games Consoles</h1>
     <?php
         require_once '../../config/database.php';
-        $customer->showProducts();
+
+        // setting to gc for switch
+        $input="GC";
+
+        // giving input to showProducts
+        $customer->showProducts($input);
     ?>
 </body>
 </html>

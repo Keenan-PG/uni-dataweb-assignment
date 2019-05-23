@@ -7,10 +7,15 @@
     <title>Miscellaneous products | Take2Tech</title>
 </head>
 <body>
-    <h1>Our products</h1>
+    <h1>Miscellaneous products</h1>
     <?php
-        require_once '../../config/database.php';
-        $customer->showProducts();
+        require_once '../../config/database.php';        
+        
+        // setting to ot for switch
+        $input="OT";
+        
+        // giving input to showProducts
+        $customer->showProducts($input);
     ?>
 </body>
 </html>
