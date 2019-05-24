@@ -13,62 +13,7 @@ body {
     font-family: 'Mandali', sans-serif;
 }
 
-/* 
-easy colouring  
-*/
-
-.t2t-Blue {
-    color: var(--ea-app-primary-colour-blue)!important;
-}
-
-.t2t-Black {
-    color: var(--ea-app-primary-colour-black)!important;
-}
-
-.t2t-lGrey {
-    color: var(--ea-app-primary-colour-lGrey)!important;
-}
-
-.tst-White {
-    color: var(--ea-app-primary-colour-white)!important;
-}
-
-.t2t-Red {
-    color: var(--ea-app-secondary-colour-red)!important;
-}
-
-.t2t-dGrey {
-    color: var(--ea-app-secondary-colour-dGrey)!important;
-}
-
-/* 
-easy bg colouring 
-*/
-
-.t2t-Blue-BG {
-    background-color: var(--ea-app-primary-colour-blue)!important;
-}
-
-.t2t-Black-BG {
-    background-color: var(--ea-app-primary-colour-black)!important;
-}
-
-.t2t-lGrey-BG {
-    background-color: var(--ea-app-primary-colour-lGrey)!important;
-}
-
-.t2t-White-BG {
-    background-color: var(--ea-app-primary-colour-white)!important;
-}
-
-.t2t-Red-BG {
-    background-color: var(--ea-app-secondary-colour-red)!important;
-}
-
-.t2t-dGrey-BG {
-    background-color: var(--ea-app-secondary-colour-dGrey)!important;
-}
-
+/* products */
 .productBlock {
     position: relative;
     display: -webkit-box;
@@ -104,12 +49,18 @@ easy bg colouring
     padding: 1.25rem;
 }
 
+/* navs */
+
 .cats {
     display: inline-block;
     width: 33%;
     vertical-align:top;
     text-decoration: none;
 }
+
+
+
+/* elements */
 
 ul {
     list-style-type: circle;
