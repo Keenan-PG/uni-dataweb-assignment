@@ -32,7 +32,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Edit Product | T2T</title>
-<link rel="stylesheet" href="style.css" type="text/css"  />
+    <link href="https://fonts.googleapis.com/css?family=Mandali&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/take2tech/assets/styles/styles.css">
 </head>
 <body>
     <a href="home.php">Back</a>

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Home | Take2Tech</title>
+    <link href="https://fonts.googleapis.com/css?family=Mandali&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/take2tech/assets/styles/styles.css">
 </head>
 <body>
     <h1>HOME</h1>

@@ -23,7 +23,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Employee login | Take2Tech</title>
-<link rel="stylesheet" href="style.css" type="text/css"  />
+    <link href="https://fonts.googleapis.com/css?family=Mandali&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/take2tech/assets/styles/styles.css">
 </head>
 <body>
 <div class="container">

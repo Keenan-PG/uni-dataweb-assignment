@@ -21,6 +21,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" href="style.css" type="text/css"  />
     <title>Admin - <?php print($userRow['Username']); ?> | T2T</title>
+    <link href="https://fonts.googleapis.com/css?family=Mandali&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/take2tech/assets/styles/styles.css">
 </head>
 
 <body>
