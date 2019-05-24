@@ -49,7 +49,7 @@
         We don't expect you to buy our products straight from our website - instead, reserve your spot to test it, ensure it's everything you want. 
         Meet the team, actually speak to somebody. That's what makes us Take2Tech.</p>
 
-        <h6>Reserve now</h6>
+        <h3>Reserve now</h3>
         <form method="post">
             <div class="form-group">
                 <label for="i_cName">Customer name:</label>
@@ -72,7 +72,7 @@
             </div>
             <div class="clearfix"></div><hr />
             <div class="form-group">
-                <button type="submit" class="btn btn-block btn-primary">
+                <button type="submit" class="button">
                     Reserve Product
                 </button>
             </div>

@@ -47,9 +47,9 @@
                 ?>
                 <p>Are you sure you want to delete this product?</p>
                 <input type="hidden" class="form-control" name="productID" value="<?php echo $pID; ?>" required />
-                <input type="submit" value="Confirm">
+                <input type="submit" class="button" value="Confirm">
             </form>
-                <a href="home.php"><button>No</button></a>
+                <a href="home.php"><button class="button">No</button></a>
           </div>
     </div>
 </body>

@@ -49,8 +49,8 @@
             <small><i>*pre-populated for easy login (would not do this real world)</i></small>
             <div class="clearfix"></div><hr />
             <div class="form-group">
-             <button type="submit" class="btn btn-block btn-primary">
-                 <i class="glyphicon glyphicon-log-in"></i>&nbsp;SIGN IN
+             <button type="submit" class="button">
+                  Sign in
                 </button>
             </div>
         </form>

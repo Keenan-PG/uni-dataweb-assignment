@@ -70,7 +70,7 @@ class CUSTOMER
                 echo '<p class="productBlock-Text">'. $row['ProductDescription'] .'</p>';
                 echo '<form method="GET" action="../reserve.php">';
                   echo '<input type="hidden" name="productID" value="'. $row['ProductID'] .'">';
-                  echo '<input type="submit" class"button" value="Reserve/Test Product">';
+                  echo '<input type="submit" class="button" value="Reserve/Test Product">';
                 echo '</form>';
               echo '</div>';
             echo '</div>';

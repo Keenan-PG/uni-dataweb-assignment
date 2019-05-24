@@ -52,7 +52,7 @@
               ?>
               <div class="clearfix"></div><hr />
               <div class="form-group">
-                  <button type="submit" class="btn btn-block btn-primary">
+                  <button type="submit" class="button">
                       Edit Product
                   </button>
               </div>

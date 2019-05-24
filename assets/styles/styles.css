@@ -68,3 +68,69 @@ easy bg colouring
 .t2t-dGrey-BG {
     background-color: var(--ea-app-secondary-colour-dGrey)!important;
 }
+
+.productBlock {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    width: 30%;
+    padding: 1rem;
+    margin: 0.5rem;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.productBlock-Img {
+    width: 100%;
+    border-top-left-radius: calc(.25rem - 1px);
+    border-top-right-radius: calc(.25rem - 1px);
+}
+
+.productBlock-Body {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+.cats {
+    display: inline-block;
+    width: 33%;
+    vertical-align:top;
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: circle;
+}
+
+.button {
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    background-color: #3E8079;
+    color: var(--t2t-white);
+}
